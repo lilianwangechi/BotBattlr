@@ -19,7 +19,13 @@ if(botArmy.find((botArm) => botArm.id === bot.id)) {
     setBotArmy(army => [...army,bot]);
    }
   }
-
+ function handleDelete(){
+  fetch(`http://localhost:8002/bots/${bot.id}`,{
+  method:"DELETE",
+  })
+  .then(res => res.json())
+  .then(()=> alert('Deleted'))
+ }
 
   return (
    
@@ -27,8 +33,8 @@ if(botArmy.find((botArm) => botArm.id === bot.id)) {
       <div
         className="ui card"
         key={bot.id}
-        onClick={handleClick}>
-        <div className="image">
+        >
+        <div className="image" onClick={handleClick}>
         <img alt="oh no!" src={bot.avatar_url} />
         </div>
         <div className="content">
@@ -59,9 +65,7 @@ if(botArmy.find((botArm) => botArm.id === bot.id)) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() =>
-                  console.log("add code to connect event listener")
-                }
+                onClick={handleDelete}
               >
                 x
               </button>
