@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const botTypeClasses = {
   Assault: "icon military",
   Defender: "icon shield",
@@ -11,9 +10,7 @@ const botTypeClasses = {
 };
 
 function BotCard({ bot }) {
-  
   return (
-    console.log(bot),
     <div className="ui column">
       <div
         className="ui card"
