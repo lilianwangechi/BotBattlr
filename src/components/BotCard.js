@@ -11,6 +11,7 @@ const botTypeClasses = {
 
 function BotCard({ bot }) {
   return (
+   
     <div className="ui column">
       <div
         className="ui card"
@@ -18,11 +19,12 @@ function BotCard({ bot }) {
         onClick={() => console.log("add code to connect event listener")}
       >
         <div className="image">
-          <img alt="oh no!" src={bot.avatar_url} />
+        <img alt="oh no!" src={bot.avatar_url} />
         </div>
         <div className="content">
           <div className="header">
             {bot.name}
+            
             <i className={botTypeClasses[bot.bot_class]} />
           </div>
           <div className="meta text-wrap">
@@ -58,7 +60,9 @@ function BotCard({ bot }) {
         </div>
       </div>
     </div>
+    
   );
+  
 }
 
 export default BotCard;
