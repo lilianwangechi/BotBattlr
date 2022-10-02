@@ -1,7 +1,7 @@
 import React from "react";
 import BotCard from "./BotCard";
 
-function BotCollection({bots,botArmy,setBotArmy}) {
+function BotCollection({bots,botArmy,setBotArmy,setBotData}) {
   // Your code here
 
   return (
@@ -13,6 +13,7 @@ function BotCollection({bots,botArmy,setBotArmy}) {
          bot={bot} 
          botArmy={botArmy}
          setBotArmy={setBotArmy}
+         setBotData={setBotData}
          />
         ))}
        

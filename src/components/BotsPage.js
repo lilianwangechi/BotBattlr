@@ -14,8 +14,16 @@ useEffect(()=>{
 },[]);
   return (
     <div>
-      <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy}/>
-      <BotCollection bots={botData} setBotArmy={setBotArmy} botArmy={botArmy} />
+      <YourBotArmy 
+      botArmy={botArmy}
+      setBotArmy={setBotArmy}
+      setBotData={setBotData}
+      />
+      <BotCollection 
+      bots={botData} 
+      setBotArmy={setBotArmy}
+      botArmy={botArmy}
+      setBotData={setBotData} />
     </div>
   )
 }

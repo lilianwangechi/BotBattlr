@@ -10,7 +10,7 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot ,botArmy,setBotArmy}) {
+function BotCard({ bot ,botArmy,setBotArmy,setBotData}) {
 
 function handleClick(){
 if(botArmy.find((botArm) => botArm.id === bot.id)) {
@@ -24,9 +24,12 @@ if(botArmy.find((botArm) => botArm.id === bot.id)) {
   method:"DELETE",
   })
   .then(res => res.json())
-  .then(()=> alert('Deleted'))
+  .then(()=> {
+    setBotArmy((army) => army.filter((botArm) => botArm.id !== bot.id));
+    alert('Bot deleted')
+  }
+  );
  }
-
   return (
    
     <div className="ui column">
@@ -78,5 +81,6 @@ if(botArmy.find((botArm) => botArm.id === bot.id)) {
   );
   
 }
+
 
 export default BotCard;
