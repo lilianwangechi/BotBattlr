@@ -1,6 +1,6 @@
 import React from "react";
 import BotsPage from "./BotsPage";
-
+//core deliverables
 function App() {
   
   return (
